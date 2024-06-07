@@ -1,8 +1,9 @@
 # Identity Provider
+This repository serves as identity provider for the [Service Provider repository](https://github.com/MMoreira01/service-provider). 
 
-This repository serves as indentity provider that will use the [Service Provider repository](https://github.com/MMoreira01/service-provider) to authenticate users.
+This is a Laravel project that provides a REST API using OAuth2.0 for the service provider to consume.
 
-This should run on port 8001 and the Service Provider on port 8000.
+This should be run on port 8000, while the identity provider should be run on port 8001.
 
 ## Setup
 
@@ -33,7 +34,7 @@ php artisan db:seed
 
 5) Serve the project
 ```bash
-php artisan serve --port=8001
+php artisan serve --port=8000
 ```
 
 ---
