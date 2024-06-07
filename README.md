@@ -31,8 +31,21 @@ DB_PASSWORD=
 php artisan migrate
 php artisan db:seed
 ```
+5) Create Client
+```bash
+php artisan passport:client
+```
 
-5) Serve the project
+6) Add the Credentials to the [Service Provider App](https://github.com/MMoreira01/service-provider)
+```bash
+# .env
+OAUTH_CLIENT_ID=yyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+OAUTH_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxx
+IDP_URL=http://127.0.0.1:8000
+APP_URL=http://127.0.0.1:8001
+```
+
+7) Serve the project
 ```bash
 php artisan serve --port=8000
 ```
