@@ -4,7 +4,9 @@ This repository serves as identity provider for the [Service Provider repository
 
 This is a Laravel project that provides a REST API using OAuth2.0 for the service provider to consume.
 
-This should be run on port 8000, while the identity provider should be run on port 8001.
+This should be run on port 8000, while the service provider should be run on port 8001.
+
+The Identity Provider is a simulated Univeristy Moodle Plataform, which can be used to login on other services related to the University or academic services.
 
 ## Setup
 
