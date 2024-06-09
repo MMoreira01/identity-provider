@@ -14,6 +14,7 @@ The Identity Provider is a simulated Univeristy Moodle Plataform, which can be u
 
 ```bash
 composer install
+npm install
 ```
 
 2. Copy the .env file, generate a key and the assets
@@ -21,6 +22,7 @@ composer install
 ```bash
 php -r "copy('.env.example', '.env');"
 php artisan key:generate
+npm run prod
 ```
 
 3. Create a database and fill the .env file with those details
