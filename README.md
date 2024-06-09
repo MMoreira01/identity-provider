@@ -1,5 +1,6 @@
 # Identity Provider
-This repository serves as identity provider for the [Service Provider repository](https://github.com/MMoreira01/service-provider). 
+
+This repository serves as identity provider for the [Service Provider repository](https://github.com/MMoreira01/service-provider).
 
 This is a Laravel project that provides a REST API using OAuth2.0 for the service provider to consume.
 
@@ -7,18 +8,21 @@ This should be run on port 8000, while the identity provider should be run on po
 
 ## Setup
 
-1) Install dependencies and copy the .env
+1. Install dependencies and copy the .env
+
 ```bash
 composer install
 ```
 
-2) Copy the .env file, generate a key and the assets
+2. Copy the .env file, generate a key and the assets
+
 ```bash
 php -r "copy('.env.example', '.env');"
 php artisan key:generate
 ```
 
-3) Create a database and fill the .env file with those details
+3. Create a database and fill the .env file with those details
+
 ```bash
 # .env
 DB_DATABASE=laravel
@@ -26,17 +30,27 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-4) Run the migrations and create the admin user
+4. Run the migrations and create the admin user
+
 ```bash
 php artisan migrate
 php artisan db:seed
 ```
-5) Create Client
+
+5. Create Client
+
 ```bash
 php artisan passport:client
 ```
 
-6) Add the Credentials to the [Service Provider App](https://github.com/MMoreira01/service-provider)
+6. Generate Passport Encryption Keys
+
+```bash
+php artisan passport:keys
+```
+
+7. Add the Credentials to the [Service Provider App](https://github.com/MMoreira01/service-provider)
+
 ```bash
 # .env
 OAUTH_CLIENT_ID=yyyyyyyyyyyyyyyyyyyyyyyyyyyyy
@@ -45,7 +59,8 @@ IDP_URL=http://127.0.0.1:8000
 APP_URL=http://127.0.0.1:8001
 ```
 
-7) Serve the project
+8. Serve the project
+
 ```bash
 php artisan serve --port=8000
 ```
@@ -54,16 +69,16 @@ php artisan serve --port=8000
 
 ## Usefull commands
 
-- While testing Migrations and Seeders
+-   While testing Migrations and Seeders
+
 ```bash
 php artisan migrate:rollback
-php artisan migrate 
+php artisan migrate
 php artisan db:seed
 ```
 
 ## Credits
 
-- [Marco Moreira](https://github.com/MMoreira01)
-- [Francisco Ferreira](https://github.com/feel31ng)
-- [João Rosa](https://github.com/joaorosa30)
-
+-   [Marco Moreira](https://github.com/MMoreira01)
+-   [Francisco Ferreira](https://github.com/feel31ng)
+-   [João Rosa](https://github.com/joaorosa30)

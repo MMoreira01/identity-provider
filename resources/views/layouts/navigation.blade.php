@@ -1,4 +1,19 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<style>
+    body {
+        font-family: 'figtree', sans-serif;
+        background-color: #f3f4f6;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #f98012;
+    }
+</style>
+
+<nav x-data="{ open: false }" style="background-color:white">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -6,21 +21,26 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <div class="navbar-brand">Muudal</div>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="color:black">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard.clients')" :active="request()->routeIs('dashboard.clients')">
-                        {{ __('Clients') }}
+                    <x-nav-link :href="route('dashboard.courses')" :active="request()->routeIs('dashboard.courses')" style="color:black">
+                        {{ __('My Courses') }}
                     </x-nav-link>
                 </div>
+                {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.clients')" :active="request()->routeIs('dashboard.clients')" style="color:black">
+                        {{ __('Clients') }}
+                    </x-nav-link>
+                </div> --}}
             </div>
 
             <!-- Settings Dropdown -->
@@ -46,7 +66,9 @@
                         {{-- <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link> --}}
-
+                        <x-dropdown-link :href="route('dashboard.oauthTokens')">
+                            {{ __('Oauth Connections') }}
+                        </x-dropdown-link>
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
